@@ -1,8 +1,27 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Razor";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<h2>Information</h2>
+<h2>Datum/Klockslag: @DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")</h2>
+
+
+@if (DateTime.Now.DayOfWeek == DayOfWeek.Monday) {
+    <p>Det är måndag idag!</p>
+} else {
+    <p>Det är inte måndag idag!</p>
+}
+
+@{ 
+    string[] courses = {"DT057G, Webbutveckling I", "DT093G, Webbutveckling II", "DT173G, Webbutveckling III", "GD008G, Typografi och form för webb", "DT163G, Digital bildbehandling för webb", "DT084G, Introduktion till programmering i JavaScript", "DT068G, Webbanvändbarhet", "DT003G, Databaser", "DT193G, Fullstack-utveckling med ramverk"};
+    }
+
+    <ul>
+@foreach (string course in courses)
+    {<li>@course</li>}
+</ul>
+
+
